@@ -35,6 +35,11 @@ public class ChronomancerEngine {
         vaultInventory.accept(curseDetector);
         System.out.println("  Cursed items found: " + curseDetector.getCursedCount() + "\n");
 
+        System.out.println("--- Appraisal: Weight Calculation (open/closed proof) ---");
+        WeightCalculator weightCalculator = new WeightCalculator();
+        vaultInventory.accept(weightCalculator);
+        System.out.println("  Total carry weight: " + weightCalculator.getTotalWeight() + " kg\n");
+
         Caretaker caretaker = new Caretaker();
         for (Hero hero : party) {
             System.out.println("[Memento] Saving snapshot for " + hero.getName() + " -> HP=" + hero.getHp() + ", Mana=" + hero.getMana() + ", Gold=" + hero.getGold());
