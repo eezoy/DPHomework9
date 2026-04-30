@@ -30,36 +30,36 @@ public class EnchantmentScanner implements ArtifactVisitor {
     public void visit(Weapon weapon) {
         if (weapon.getAttackBonus() >= 5) {
             enchantedCount++;
-            System.out.println("[EnchantmentScanner] Weapon  '" + weapon.getName() + "' -> ENCHANTED (attack bonus: " + weapon.getAttackBonus() + ")");
+            System.out.println("  Enchant: Weapon  '" + weapon.getName() + "' -> ENCHANTED (attack bonus: " + weapon.getAttackBonus() + ")");
         } else {
-            System.out.println("[EnchantmentScanner] Weapon  '" + weapon.getName() + "' -> mundane");
+            System.out.println("  Enchant: Weapon  '" + weapon.getName() + "' -> mundane");
         }
     }
 
     @Override
     public void visit(Potion potion) {
-        System.out.println("[EnchantmentScanner] Potion  '" + potion.getName() + "' -> alchemical, not enchanted");
+        System.out.println("  Enchant: Potion  '" + potion.getName() + "' -> alchemical, not enchanted");
     }
 
     @Override
     public void visit(Scroll scroll) {
         enchantedCount++;
-        System.out.println("[EnchantmentScanner] Scroll  '" + scroll.getName() + "' -> ENCHANTED (spell: " + scroll.getSpellName() + ")");
+        System.out.println("  Enchant: Scroll  '" + scroll.getName() + "' -> ENCHANTED (spell: " + scroll.getSpellName() + ")");
     }
 
     @Override
     public void visit(Ring ring) {
         enchantedCount++;
-        System.out.println("[EnchantmentScanner] Ring    '" + ring.getName() + "' -> ENCHANTED (magic bonus: " + ring.getMagicBonus() + ")");
+        System.out.println("  Enchant: Ring    '" + ring.getName() + "' -> ENCHANTED (magic bonus: " + ring.getMagicBonus() + ")");
     }
 
     @Override
     public void visit(Armor armor) {
         if (armor.getDefenseBonus() >= 5) {
             enchantedCount++;
-            System.out.println("[EnchantmentScanner] Armor   '" + armor.getName() + "' -> ENCHANTED (defense bonus: " + armor.getDefenseBonus() + ")");
+            System.out.println("  Enchant: Armor   '" + armor.getName() + "' -> ENCHANTED (defense bonus: " + armor.getDefenseBonus() + ")");
         } else {
-            System.out.println("[EnchantmentScanner] Armor   '" + armor.getName() + "' -> mundane");
+            System.out.println("  Enchant: Armor   '" + armor.getName() + "' -> mundane");
         }
     }
 }

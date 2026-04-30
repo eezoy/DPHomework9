@@ -41,8 +41,9 @@ public class ChronomancerEngine {
         System.out.println("  Total carry weight: " + weightCalculator.getTotalWeight() + " kg\n");
 
         Caretaker caretaker = new Caretaker();
+        System.out.println("--- Memento: Saving Hero Snapshots ---");
         for (Hero hero : party) {
-            System.out.println("[Memento] Saving snapshot for " + hero.getName() + " -> HP=" + hero.getHp() + ", Mana=" + hero.getMana() + ", Gold=" + hero.getGold());
+            System.out.println("  Snapshot saved for " + hero.getName() + " -> HP=" + hero.getHp() + ", Mana=" + hero.getMana() + ", Gold=" + hero.getGold());
             caretaker.save(hero.createMemento());
         }
 
@@ -64,7 +65,7 @@ public class ChronomancerEngine {
             if (memento != null) {
                 party.get(i).restoreFromMemento(memento);
                 restoredCount++;
-                System.out.println("[Rewind] " + party.get(i).getName() + " restored -> HP=" + party.get(i).getHp() + ", Mana=" + party.get(i).getMana() + ", Gold=" + party.get(i).getGold());
+                System.out.println("  Restored: " + party.get(i).getName() + " -> HP=" + party.get(i).getHp() + ", Mana=" + party.get(i).getMana() + ", Gold=" + party.get(i).getGold());
             }
         }
         System.out.println();

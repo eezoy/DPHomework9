@@ -122,13 +122,10 @@ public class Hero {
 
     @Override
     public String toString() {
-        return "Hero{"
-                + "name='" + name + '\''
-                + ", hp=" + hp
-                + ", mana=" + mana
-                + ", gold=" + gold
-                + ", attackPower=" + attackPower
-                + ", defense=" + defense
-                + '}';
+        return name + " (HP: " + hp + "/" + maxHp
+                + ", Mana: " + mana
+                + ", Gold: " + gold
+                + ", ATK: " + attackPower
+                + ", DEF: " + defense + ")";
     }
 }

@@ -1,7 +1,7 @@
 package com.narxoz.rpg.combatant;
 
 import com.narxoz.rpg.artifact.Artifact;
-import java.util.List;
+import java.util.*;
 
 /**
  * Immutable snapshot of a hero's mutable state.
@@ -35,7 +35,7 @@ public final class HeroMemento {
         this.maxHp = maxHp;
         this.attackPower = attackPower;
         this.defense = defense;
-        this.inventorySnapshot = inventorySnapshot == null ? List.of() : List.copyOf(inventorySnapshot);
+        this.inventorySnapshot = inventorySnapshot == null ? Collections.emptyList() : Collections.unmodifiableList(new ArrayList<>(inventorySnapshot));
     }
 
     String getName() {

@@ -17,30 +17,30 @@ public class WeightCalculator implements ArtifactVisitor {
     @Override
     public void visit(Weapon weapon) {
         totalWeight += weapon.getWeight();
-        System.out.println("[WeightCalculator] Weapon  '" + weapon.getName() + "' -> " + weapon.getWeight() + " kg");
+        System.out.println("  Weight: Weapon  '" + weapon.getName() + "' -> " + weapon.getWeight() + " kg");
     }
 
     @Override
     public void visit(Potion potion) {
         totalWeight += potion.getWeight();
-        System.out.println("[WeightCalculator] Potion  '" + potion.getName() + "' -> " + potion.getWeight() + " kg");
+        System.out.println("  Weight: Potion  '" + potion.getName() + "' -> " + potion.getWeight() + " kg");
     }
 
     @Override
     public void visit(Scroll scroll) {
         totalWeight += scroll.getWeight();
-        System.out.println("[WeightCalculator] Scroll  '" + scroll.getName() + "' -> " + scroll.getWeight() + " kg");
+        System.out.println("  Weight: Scroll  '" + scroll.getName() + "' -> " + scroll.getWeight() + " kg");
     }
 
     @Override
     public void visit(Ring ring) {
         totalWeight += ring.getWeight();
-        System.out.println("[WeightCalculator] Ring    '" + ring.getName() + "' -> " + ring.getWeight() + " kg");
+        System.out.println("  Weight: Ring    '" + ring.getName() + "' -> " + ring.getWeight() + " kg");
     }
 
     @Override
     public void visit(Armor armor) {
         totalWeight += armor.getWeight();
-        System.out.println("[WeightCalculator] Armor   '" + armor.getName() + "' -> " + armor.getWeight() + " kg");
+        System.out.println("  Weight: Armor   '" + armor.getName() + "' -> " + armor.getWeight() + " kg");
     }
 }

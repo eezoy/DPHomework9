@@ -18,15 +18,15 @@ public class CurseDetector implements ArtifactVisitor {
     public void visit(Weapon weapon) {
         if (weapon.getAttackBonus() >= 10) {
             cursedCount++;
-            System.out.println("[CurseDetector] Weapon  '" + weapon.getName() + "' -> CURSED (suspiciously powerful)");
+            System.out.println("  Curse: Weapon  '" + weapon.getName() + "' -> CURSED (suspiciously powerful)");
         } else {
-            System.out.println("[CurseDetector] Weapon  '" + weapon.getName() + "' -> safe");
+            System.out.println("  Curse: Weapon  '" + weapon.getName() + "' -> safe");
         }
     }
 
     @Override
     public void visit(Potion potion) {
-        System.out.println("[CurseDetector] Potion  '" + potion.getName() + "' -> safe");
+        System.out.println("  Curse: Potion  '" + potion.getName() + "' -> safe");
     }
 
     @Override
@@ -34,9 +34,9 @@ public class CurseDetector implements ArtifactVisitor {
         String spell = scroll.getSpellName().toLowerCase();
         if (spell.contains("death") || spell.contains("curse") || spell.contains("doom") || spell.contains("void")) {
             cursedCount++;
-            System.out.println("[CurseDetector] Scroll  '" + scroll.getName() + "' -> CURSED (dark spell: " + scroll.getSpellName() + ")");
+            System.out.println("  Curse: Scroll  '" + scroll.getName() + "' -> CURSED (dark spell: " + scroll.getSpellName() + ")");
         } else {
-            System.out.println("[CurseDetector] Scroll  '" + scroll.getName() + "' -> safe");
+            System.out.println("  Curse: Scroll  '" + scroll.getName() + "' -> safe");
         }
     }
 
@@ -44,14 +44,14 @@ public class CurseDetector implements ArtifactVisitor {
     public void visit(Ring ring) {
         if (ring.getMagicBonus() >= 8) {
             cursedCount++;
-            System.out.println("[CurseDetector] Ring    '" + ring.getName() + "' -> CURSED (overwhelming magic: " + ring.getMagicBonus() + ")");
+            System.out.println("  Curse: Ring    '" + ring.getName() + "' -> CURSED (overwhelming magic: " + ring.getMagicBonus() + ")");
         } else {
-            System.out.println("[CurseDetector] Ring    '" + ring.getName() + "' -> safe");
+            System.out.println("  Curse: Ring    '" + ring.getName() + "' -> safe");
         }
     }
 
     @Override
     public void visit(Armor armor) {
-        System.out.println("[CurseDetector] Armor   '" + armor.getName() + "' -> safe");
+        System.out.println("  Curse: Armor   '" + armor.getName() + "' -> safe");
     }
 }
